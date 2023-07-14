@@ -7,6 +7,7 @@ void main() {
       home: Scaffold(
         body: GradientContainer(Colors.black38, Colors.black45),
       ),
+      title: 'Application TODO',
     ),
   );
 }
