@@ -8,4 +8,5 @@
  - Từ thư mục `lib` --> tìm file **main.dart** --> chọn `Run` --> `Run without Debugging`
 
 ### Tree folders
-
+- **Home page**: <img src = "./assets/images/homepage.PNG">
+    

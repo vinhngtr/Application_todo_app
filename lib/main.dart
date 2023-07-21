@@ -1,11 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:todoapp/home.dart';
+// import 'package:todoapp/myhomeePage.dart';
 
 void main() {
   runApp(
-    const MaterialApp(
+    MaterialApp(
       home: Scaffold(
-        body: Home(),
+        body: Container(
+          decoration: const BoxDecoration(
+            gradient: LinearGradient(
+              colors: [
+                Color.fromARGB(255, 214, 208, 149),
+                Color.fromARGB(210, 206, 8, 8)
+              ],
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+            ),
+          ),
+          child: const Home(),
+        ),
       ),
     ),
   );
