@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class MiniProject extends StatelessWidget {
   const MiniProject({super.key});
-
+  // List<String> checkdata;
   int printCL() {
     return 10;
   }
@@ -24,9 +24,12 @@ class MiniProject extends StatelessWidget {
             //! căn giữa theo hàng ngang box container
             child: Container(
               margin: const EdgeInsets.all(40),
+
               width: 150,
               height: 150,
+              // padding: const EdgeInsets.fromLTRB(left, top, right, bottom),
               decoration: BoxDecoration(
+                // boxShadow: List.from(bool.hasEnvironment(val)),
                 color: Colors.lightBlueAccent,
                 borderRadius: BorderRadius.circular(100), //! 100: hình tròn
                 border: Border.all(color: Colors.white, width: 5.0),
@@ -65,8 +68,10 @@ class MiniProject extends StatelessWidget {
               ),
             ),
           ),
+          
           // ! Box password--------------
           Container(
+              
             // margin: const EdgeInsets.all(20),
             margin: const EdgeInsets.fromLTRB(20, 0, 20, 0),
             decoration: BoxDecoration(

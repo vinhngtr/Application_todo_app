@@ -6,7 +6,10 @@
 
  - Lựa chọn Virtual Machine cần hiện thực: `Command pallete (Ctrl+shift+P)` --> `Flutter launch emulator` --> lựa chọn thiết bị phù hợp
  - Từ thư mục `lib` --> tìm file **main.dart** --> chọn `Run` --> `Run without Debugging`
+ - Tạo **emulator Android** từ Android studio: 
+    + 
 
 ### Tree folders
-- **Home page**: <img src = "./assets/images/homepage.PNG">
+- **Home page**: <img src = "./assets/images/homepage.PNG", width = 200, height = 200>
+
     

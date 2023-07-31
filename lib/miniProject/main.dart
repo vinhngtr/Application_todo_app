@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:todoapp/miniProject/TextFied.dart';
-import 'package:todoapp/miniProject/miniProject.dart';
+import 'package:todoapp/miniProject/mini_project.dart';
 
 void main() {
   runApp(
