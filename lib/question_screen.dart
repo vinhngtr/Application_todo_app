@@ -13,6 +13,7 @@ class QuestionScreen extends StatefulWidget {
   State<QuestionScreen> createState() => _QuizState();
 }
 
+
 class _QuizState extends State<QuestionScreen> {
   var indexQuestion = 0;
   void nextIndex(String selectAns) {
@@ -28,7 +29,7 @@ class _QuizState extends State<QuestionScreen> {
   @override
   Widget build(context) {
     final currQuestion = quiz[indexQuestion];
-
+  
     return SizedBox(
       width: double.infinity,
       height: double.infinity,
@@ -59,6 +60,7 @@ class _QuizState extends State<QuestionScreen> {
             // !------- CÁC LỰA CHỌN <==> BUTTON
             ...currQuestion.getSufferAnswer().map((ans) {
               return Column(
+
                 mainAxisAlignment: MainAxisAlignment.center,
                 mainAxisSize: MainAxisSize.min,
                 crossAxisAlignment: CrossAxisAlignment.stretch,

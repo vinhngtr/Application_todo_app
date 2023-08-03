@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:todoapp/home.dart';
 import 'package:todoapp/question_screen.dart';
 import 'package:todoapp/data/quiz.dart';
+import 'package:todoapp/result_screen.dart';
 
 class Quiz extends StatefulWidget {
   const Quiz({super.key});
@@ -20,8 +21,8 @@ class _QuizState extends State<Quiz> {
     answerSelect.add(ans);
     if (answerSelect.length == quiz.length) {
       setState(() {
-        answerSelect = [];
-        activeScreen = 'home';
+        // answerSelect = [];
+        activeScreen = 'result-screen';
       });
     }
   }
@@ -35,6 +36,7 @@ class _QuizState extends State<Quiz> {
   // -------------END----------------//
   @override
   Widget build(BuildContext context) {
+    // ! Điều hướng chuyển màn hình:
     Widget selectScreen = Home(switches, 'Learn Flutter challenge');
     if (activeScreen == 'question') {
       selectScreen = QuestionScreen(
@@ -42,7 +44,12 @@ class _QuizState extends State<Quiz> {
       );
     } else if (activeScreen == 'home') {
       selectScreen = Home(switches, 'Learn Flutter challenge');
+    } else if (activeScreen == 'result-screen') {
+      selectScreen = ResultScreen(
+        listAnswer: answerSelect,
+      );
     }
+
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
@@ -50,7 +57,6 @@ class _QuizState extends State<Quiz> {
           decoration: const BoxDecoration(
             gradient: LinearGradient(
               colors: [
-                
                 Color.fromARGB(255, 228, 219, 139),
                 Color.fromARGB(238, 102, 215, 191),
               ],
