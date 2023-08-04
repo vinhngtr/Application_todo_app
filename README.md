@@ -1,7 +1,9 @@
-# Todo_App
+# Quiz Exercise_App
 - Language: **Dart**
 - Framework: **Flutter**
-- Feature: `Tạo list các công việc cần làm trong ngày / xóa cũng như thay đổi các công việc tùy ý`
+- Feature:
+    - Tạo bộ dữ liệu về câu hỏi và câu trả lời cho trước theo yêu cầu của người dùng
+    - Khi kết thúc quiz App sẽ `tổng hợp các câu trả lời đã chọn cũng như đã chọn đúng ` và `hiển thị giao diện tổng kết bài quiz` để người dùng nắm được kết quả làm bài.
 ### Run application
  - Lựa chọn Virtual Machine cần hiện thực: `Command pallete (Ctrl+shift+P)` --> `Flutter launch emulator` --> lựa chọn thiết bị phù hợp
  - Từ thư mục `lib` --> tìm file **main.dart** --> chọn `Run` --> `Run without Debugging`
