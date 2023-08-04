@@ -33,6 +33,13 @@ class _QuizState extends State<Quiz> {
     });
   }
 
+  void restartQuiz() {
+    setState(() {
+      answerSelect = [];
+      activeScreen = 'question';
+    });
+  }
+
   // -------------END----------------//
   @override
   Widget build(BuildContext context) {
@@ -46,6 +53,7 @@ class _QuizState extends State<Quiz> {
       selectScreen = Home(switches, 'Learn Flutter challenge');
     } else if (activeScreen == 'result-screen') {
       selectScreen = ResultScreen(
+        onReset: restartQuiz,
         listAnswer: answerSelect,
       );
     }
@@ -65,9 +73,6 @@ class _QuizState extends State<Quiz> {
             ),
           ),
           child: selectScreen,
-          // child: activeScreen == 'home'
-          //     ? Home(switches, 'Learn Flutter challenge')
-          //     : QuestionScreen(selectAnswer: chooseAnswer),
         ),
       ),
     );

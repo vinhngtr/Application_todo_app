@@ -36,17 +36,12 @@ class Home extends StatelessWidget {
               ),
               textAlign: TextAlign.center,
             ),
-
-
             const SizedBox(
               height: 30,
             ),
-
-
             OutlinedButton.icon(
               onPressed: () {
                 questionQuiz();
-                // .... function -->
               },
               label: const Text('Quiz start'),
               icon: const Icon(
@@ -55,10 +50,11 @@ class Home extends StatelessWidget {
               style: OutlinedButton.styleFrom(
                 foregroundColor: Colors.white, //màu của text
                 backgroundColor: const Color.fromARGB(149, 82, 88, 197),
-                padding: const EdgeInsets.fromLTRB(15, 20, 15, 20),
+                side: const BorderSide(
+                    color: Color.fromARGB(255, 147, 218, 230), width: 2),
+                padding: const EdgeInsets.fromLTRB(12, 15, 12, 15),
                 textStyle: const TextStyle(
-                  // decoration: TextDecoration.underline,
-                  fontSize: 20,
+                  fontSize: 16,
                   fontWeight: FontWeight.w500,
                   fontFamily: 'Roboto Mono',
                 ),

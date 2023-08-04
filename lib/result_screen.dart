@@ -1,10 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:todoapp/data/quiz.dart';
-import 'package:todoapp/summary_answer.dart';
+import 'package:todoapp/summaryQ&A/summary_answer.dart';
 
 class ResultScreen extends StatelessWidget {
-  const ResultScreen({required this.listAnswer, super.key});
+  const ResultScreen({
+    required this.onReset,
+    required this.listAnswer,
+    super.key,
+  });
   final List<String> listAnswer;
+  final void Function() onReset;
+
   List<Map<String, Object>> getSummary() {
     final List<Map<String, Object>> summary = [];
     for (var i = 0; i < listAnswer.length; i++) {
@@ -18,16 +24,6 @@ class ResultScreen extends StatelessWidget {
       );
     }
     return summary;
-  }
-
-  int correctNumber() {
-    int num = 0;
-    getSummary().map((data) {
-      if (data['correct_answer'] == data['user_answer']) {
-        num += 1;
-      }
-    });
-    return num;
   }
 
   @override
@@ -56,6 +52,8 @@ class ResultScreen extends StatelessWidget {
               style: const TextStyle(
                 fontSize: 20,
                 fontWeight: FontWeight.w600,
+                // fontFamily: ,
+                color: Colors.white,
               ),
               textAlign: TextAlign.center,
             ),
@@ -66,16 +64,14 @@ class ResultScreen extends StatelessWidget {
             const SizedBox(
               height: 30,
             ),
-            ElevatedButton(
-              onPressed: () {},
-              style: ButtonStyle(
-                backgroundColor: MaterialStateProperty.all(Colors.black),
-                overlayColor: MaterialStateProperty.all(Colors.red),
-                // maximumSize: const MaterialStatePropertyAll(Size(200, 40)),
-                fixedSize: const MaterialStatePropertyAll(
-                    Size(double.minPositive, 30)),
+            TextButton.icon(
+              onPressed: onReset,
+              style: TextButton.styleFrom(
+                foregroundColor: Colors.white,
+                backgroundColor: Colors.lightBlueAccent,
               ),
-              child: const Text('Restart quiz!'),
+              icon: const Icon(Icons.refresh),
+              label: const Text('Restart quiz!'),
             ),
           ],
         ),
