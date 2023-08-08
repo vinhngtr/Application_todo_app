@@ -75,7 +75,7 @@ class _NewCostState extends State<NewExpense> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.fromLTRB(16, 50, 16, 30),
+      padding: const EdgeInsets.fromLTRB(16, 60, 16, 30),
       child: Column(
         // crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -86,7 +86,13 @@ class _NewCostState extends State<NewExpense> {
             // mouseCursor: SystemMouseCursors.move,
             decoration: const InputDecoration(
               // border: UnderlineInputBorder(),
-              labelText: 'Tên chi phí',
+              label: Text(
+                'Name of Cost',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 16,
+                ),
+              ),
             ),
           ),
 
@@ -99,7 +105,11 @@ class _NewCostState extends State<NewExpense> {
                   keyboardType: TextInputType.number,
                   decoration: const InputDecoration(
                     prefixText: '\$ ',
-                    label: Text('Chi phí'),
+                    label: Text('Amount',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 16,
+                        )),
                   ),
                 ),
               ),
@@ -116,8 +126,12 @@ class _NewCostState extends State<NewExpense> {
                   children: [
                     Text(
                       _selectDate == null
-                          ? 'Chưa chọn thời gian'
+                          ? 'Not selected time'
                           : formatter.format(_selectDate!),
+                      style: const TextStyle(
+                        color: Colors.white,
+                        fontSize: 14,
+                      ),
                     ),
                     IconButton(
                       onPressed: _presentDatePicker,
@@ -130,7 +144,7 @@ class _NewCostState extends State<NewExpense> {
           ),
 
           const SizedBox(
-            height: 10,
+            height: 20,
           ),
 
           // ! BUTTON XÁC THỰC
@@ -158,6 +172,8 @@ class _NewCostState extends State<NewExpense> {
               const SizedBox(
                 width: 30,
               ),
+
+              //
               Expanded(
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.end,
@@ -167,21 +183,24 @@ class _NewCostState extends State<NewExpense> {
                       onPressed: () {
                         Navigator.pop(context);
                       },
-                      style: const ButtonStyle(
-                          // backgroundColor: MaterialStatePropertyAll(
-                          // Color.fromARGB(255, 232, 205, 247)),
-                          ),
-                      child: const Text('Cancel'),
+                      style: const ButtonStyle(),
+                      child: const Text(
+                        'Cancel',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 15,
+                        ),
+                      ),
                     ),
                     ElevatedButton(
                       onPressed: _checkDataAndSubmit,
                       style: ElevatedButton.styleFrom(
                         backgroundColor:
-                            const Color.fromARGB(255, 232, 205, 247),
+                            const Color.fromARGB(255, 176, 131, 201),
                         foregroundColor:
-                            const Color.fromARGB(255, 59, 145, 215),
+                            const Color.fromARGB(255, 255, 255, 255),
                       ),
-                      child: const Text('Save change'),
+                      child: const Text('Save new cost'),
                     ),
                   ],
                 ),

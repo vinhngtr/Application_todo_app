@@ -12,11 +12,16 @@ class ExpenseList extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView.builder(
       itemCount: costList.length,
-      //! --------!: Method: Dismissible: cho phép trượt TRÁI PHẢI 1 ITEM XÓA KHỎI MÀN HÌNH (DỮ LIỆU GỐC THÌ KO XÓA NÊU ko đi lèm Property:
-      //  onDimissed: )
+      //! --------!: Method: Dismissible: cho phép trượt TRÁI PHẢI 1 ITEM XÓA KHỎI MÀN HÌNH (DỮ LIỆU GỐC THÌ KO XÓA NẾU ko đi kèm Property:  onDimissed()
       itemBuilder: (func, idx) => Dismissible(
         key: ValueKey(costList[idx]),
-
+        background: Container(
+          color: Theme.of(context).focusColor,
+          margin: const EdgeInsets.symmetric(
+            horizontal: 16,
+            vertical: 8,
+          ),
+        ),
         onDismissed: (direction) {
           removeCost(costList[idx]);
         },

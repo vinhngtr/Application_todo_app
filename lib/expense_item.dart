@@ -34,6 +34,7 @@ class ExpenseItem extends StatelessWidget {
               costItem.title,
               style: const TextStyle(
                 fontSize: 17,
+                color: Colors.white,
                 fontWeight: FontWeight.bold,
               ),
             ),

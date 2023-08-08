@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:expansetracker/Chart/chart.dart';
 import 'package:expansetracker/model/expensemodel.dart';
 import 'package:expansetracker/expanse_list.dart';
 import 'package:expansetracker/new_expense.dart';
@@ -13,16 +14,10 @@ class Expense extends StatefulWidget {
 class _ExpenseState extends State<Expense> {
   final List<Cost> _regisExpanse = [
     Cost(
-      title: 'Flutter Course',
-      amount: 19.99,
+      title: 'New Expense',
+      amount: 0,
       time: DateTime.now(),
       category: Category.work,
-    ),
-    Cost(
-      title: 'Cinema',
-      amount: 15.69,
-      time: DateTime.now(),
-      category: Category.business,
     ),
   ];
 
@@ -66,6 +61,7 @@ class _ExpenseState extends State<Expense> {
       isScrollControlled: true,
       context: context,
       builder: (func) => NewExpense(addNewExpense: _addCostNewToDB),
+      backgroundColor: const Color.fromARGB(255, 174, 194, 236),
     );
   }
 
@@ -111,11 +107,11 @@ class _ExpenseState extends State<Expense> {
         elevation: 10,
       ),
 
-      // -------------//
+      // -----------------------THE END MAIN DART------------------------------------//
 
       body: Column(
         children: [
-          const Text('data chart'),
+          Chart(expenses: _regisExpanse),
           Expanded(
             child: emtyCost,
           ),
