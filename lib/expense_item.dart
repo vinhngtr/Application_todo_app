@@ -30,19 +30,24 @@ class ExpenseItem extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           mainAxisSize: MainAxisSize.min,
           children: [
-            Text(costItem.title),
+            Text(
+              costItem.title,
+              style: const TextStyle(
+                fontSize: 17,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
             const SizedBox(
               height: 4,
             ),
             Row(
-              // mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                // ! chi phí của Event:
+                // ! Chi phí của Event:
                 Text(
                   ' \$${costItem.amount.toStringAsFixed(2)}',
                 ),
                 const Spacer(),
-                // ! ICON - TGIAN:
+                // ! Icon category and Time setItem:
                 Row(
                   children: [
                     Icon(categoryIcons[costItem.category]),
