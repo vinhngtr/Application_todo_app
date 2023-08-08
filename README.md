@@ -23,12 +23,12 @@ samples, guidance on mobile development, and a full API reference.
 - **Screen Application:** 
 
 #### Home application:
- <img src = "./assets/picture/home.PNG" width = 350 height = 650 />
+ <img src = "./assets/picture/home.PNG" width = 320 height = 650 />
 
  #### Add new cost in application:
-  <img src = "./assets/picture/addCost.PNG" width = 350 height = 650 />
+  <img src = "./assets/picture/addCost.PNG" width = 320 height = 650 />
 
 #### Delete item Cost in application:
- <img src = "./assets/picture/deleteCost.PNG" width = 350 height = 650 />
+ <img src = "./assets/picture/deleteCost.PNG" width = 320 height = 650 />
 
 
